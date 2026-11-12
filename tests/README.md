@@ -16,6 +16,10 @@ Install the required Playwright browsers with `npx playwright install chromium
 webkit`. The Chrome configurations use the locally installed Google Chrome
 stable channel.
 
+Debug runs save both standard output and error output in
+`test-debug-logs/DebugLog-<UTC date-time>.txt` while also printing it to the
+terminal.
+
 Run the serial Chromium suite with `npm test`. The specs run in this order:
 
 1. `01-user.ui.registration.spec.ts`

@@ -9,8 +9,8 @@
     "test:chrome": "playwright test --project=chrome --headed",
     "test:webkit": "playwright test --project=webkit",
     "test:chromium": "playwright test --project=chromium",
-    "test:chromium:debug": "cross-env DEBUG=pw:api playwright test --project=chromium",
-    "test:chrome:debug:video": "cross-env DEBUG=pw:api PW_VIDEO=on playwright test --project=chrome --headed",
+    "test:chromium:debug": "node scripts/run-playwright-debug.cjs --project=chromium",
+    "test:chrome:debug:video": "cross-env PW_VIDEO=on node scripts/run-playwright-debug.cjs --project=chrome --headed",
     "report": "playwright show-report"
   },
   "keywords": [],
