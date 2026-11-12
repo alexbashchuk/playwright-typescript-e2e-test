@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alex Boschuk",
+    "email": "bostchuk@gmail.com",
+    "password": "icfTest"
+  },
+  {
+    "name": "Alex Boschuk1",
+    "email": "bostchuk1@gmail.com",
+    "password": "icfTest1"
+  },
+  {
+    "name": "Alex Boschuk2",
+    "email": "bostchuk2@gmail.com",
+    "password": "icfTest2"
+  }
+]
