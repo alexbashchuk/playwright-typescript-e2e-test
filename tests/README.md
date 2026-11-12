@@ -12,6 +12,9 @@ Run the suite in the requested browser and mode:
 | Headless Chromium with Playwright API debug logs | `npm run test:chromium:debug` |
 | Headed Chrome with debug logs and video recording | `npm run test:chrome:debug:video` |
 
+Both Chrome commands use a 1920×1080 browser viewport. After either Chrome run,
+all running Docker containers are stopped and Docker Desktop is closed.
+
 Install the required Playwright browsers with `npx playwright install chromium
 webkit`. The Chrome configurations use the locally installed Google Chrome
 stable channel.

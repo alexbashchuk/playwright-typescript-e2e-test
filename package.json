@@ -6,11 +6,11 @@
   "scripts": {
     "test": "playwright test --project=chromium",
     "test:ui": "playwright test --ui --project=chromium",
-    "test:chrome": "playwright test --project=chrome --headed",
+    "test:chrome": "cross-env PW_CHROME_DOCKER_CLEANUP=on playwright test --project=chrome --headed",
     "test:webkit": "playwright test --project=webkit",
     "test:chromium": "playwright test --project=chromium",
     "test:chromium:debug": "node scripts/run-playwright-debug.cjs --project=chromium",
-    "test:chrome:debug:video": "cross-env PW_VIDEO=on node scripts/run-playwright-debug.cjs --project=chrome --headed",
+    "test:chrome:debug:video": "cross-env PW_VIDEO=on PW_CHROME_DOCKER_CLEANUP=on node scripts/run-playwright-debug.cjs --project=chrome --headed",
     "report": "playwright show-report"
   },
   "keywords": [],

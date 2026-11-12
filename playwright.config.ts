@@ -11,6 +11,7 @@ export default defineConfig({
 
   // Start Docker and the Compose services before running tests.
   globalSetup: './.github/global-setup.ts',
+  globalTeardown: './.github/global-teardown.ts',
 
   // Numeric spec prefixes preserve the requested file order; one worker runs each file in sequence.
   fullyParallel: false,
@@ -60,6 +61,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         channel: 'chrome',
+        viewport: { width: 1920, height: 1080 },
       },
     },
   ],
