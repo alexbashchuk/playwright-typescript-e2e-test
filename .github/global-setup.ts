@@ -2,7 +2,7 @@
 
 import { execFileSync } from 'node:child_process';
 
-/** Starts Docker Compose services before Playwright begins the test suite. */
+/** Starts existing Docker Compose services before Playwright begins the test suite. */
 export default async function globalSetup() {
   /** Runs a Docker CLI command and forwards its output to the test process. */
   const runDocker = (args: string[]) => {
@@ -22,13 +22,11 @@ export default async function globalSetup() {
     runDocker(['desktop', 'start']);
   }
 
-  // Replace this with the actual location of your Compose file.
   runDocker([
     'compose',
     '-f',
-    'D:/PROGRAMMING/icf_task/compose.yaml',
-    'up',
-    '-d',
+    'D:/PROGRAMMING/icf_task/docker-compose.yml',
+    'start',
     '--wait',
     '--wait-timeout',
     '120',

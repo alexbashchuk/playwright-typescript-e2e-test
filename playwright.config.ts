@@ -39,7 +39,7 @@ export default defineConfig({
     // Keep diagnostic artifacts when a test fails.
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: process.env.PW_VIDEO === 'on' ? 'on' : 'retain-on-failure',
   },
 
   projects: [
@@ -47,6 +47,19 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+      },
+    },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+      },
+    },
+    {
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
       },
     },
   ],

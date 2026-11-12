@@ -1,5 +1,21 @@
 # Registration tests
 
+## Playwright run configurations
+
+Run the suite in the requested browser and mode:
+
+| Configuration | Command |
+| --- | --- |
+| Headed Google Chrome | `npm run test:chrome` |
+| Headless WebKit | `npm run test:webkit` |
+| Headless Chromium | `npm run test:chromium` |
+| Headless Chromium with Playwright API debug logs | `npm run test:chromium:debug` |
+| Headed Chrome with debug logs and video recording | `npm run test:chrome:debug:video` |
+
+Install the required Playwright browsers with `npx playwright install chromium
+webkit`. The Chrome configurations use the locally installed Google Chrome
+stable channel.
+
 Run the serial Chromium suite with `npm test`. The specs run in this order:
 
 1. `01-user.ui.registration.spec.ts`
@@ -35,3 +51,8 @@ The API host defaults to `http://localhost:3000`; override it with
 `API_BASE_URL` if needed. The UI host can be overridden with `BASE_URL`.
 Playwright writes an HTML report to `playwright-report/` and a JUnit report to
 `test-results/junit.xml`; open the HTML report with `npm run report`.
+
+If the Docker Compose stack has not been created yet, initialize it once from
+`D:\PROGRAMMING\icf_task` with `docker compose -f docker-compose.yml up -d`.
+Playwright global setup starts the existing containers and waits for them; it
+does not create or recreate the stack.

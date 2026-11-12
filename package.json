@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
+    "test": "playwright test --project=chromium",
+    "test:ui": "playwright test --ui --project=chromium",
+    "test:chrome": "playwright test --project=chrome --headed",
+    "test:webkit": "playwright test --project=webkit",
+    "test:chromium": "playwright test --project=chromium",
+    "test:chromium:debug": "cross-env DEBUG=pw:api playwright test --project=chromium",
+    "test:chrome:debug:video": "cross-env DEBUG=pw:api PW_VIDEO=on playwright test --project=chrome --headed",
     "report": "playwright show-report"
   },
   "keywords": [],
@@ -16,6 +21,7 @@
     "@playwright/test": "^1.65.0",
     "@types/node": "^26.6.6",
     "@types/pg": "^8.23.1",
+    "cross-env": "^10.0.0",
     "typescript": "^7.0.2"
   },
   "dependencies": {
